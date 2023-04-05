@@ -2,6 +2,7 @@ import React from "react";
 
 import styles from "./UserCardList.module.css";
 import UserCard from "./UserCard";
+import Card from "../UI/Card";
 
 const UserCardList = (props) => {
   return (

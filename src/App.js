@@ -11,13 +11,14 @@ function App() {
 
   const addUserHandler = (name, age, id) => {
     setUserCards((prevUsers) => {
-      const updatedUsers = [...prevUsers];
-      updatedUsers.unshift({
-        name: name,
-        age: age,
-        id: id,
-      });
-      return updatedUsers;
+      return [
+        ...prevUsers,
+        {
+          name: name,
+          age: age,
+          id: id,
+        },
+      ];
     });
   };
 
