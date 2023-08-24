@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <h1>Hi there!</h1>
-      <DemoOutput show={showP} />
+      <DemoOutput show={false} />
       <button onClick={handleShowP}>Click here</button>
     </>
   );
