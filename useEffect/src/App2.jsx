@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 
 export default function App2() {
-  //   const [display, setDisplay] = useState("posts");
-  //   const [items, setItems] = useState([]);
+  // const [display, setDisplay] = useState("posts");
+  // const [items, setItems] = useState([]);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  //   useEffect(() => {
-  //     fetch(`https://jsonplaceholder.typicode.com/${display}`)
-  //       .then((response) => response.json())
-  //       .then((json) => setItems(json));
-  //   }, [display]);
+  // useEffect(() => {
+  //   fetch(`https://jsonplaceholder.typicode.com/${display}`)
+  //     .then((response) => response.json())
+  //     .then((json) => setItems(json));
+  // }, [display]);
 
   function handleResize() {
     setScreenWidth(window.innerWidth);
