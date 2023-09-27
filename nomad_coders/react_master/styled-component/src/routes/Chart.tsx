@@ -1,11 +1,13 @@
 import React from "react";
+import { isDarkAtom } from "../atoms";
+import { useRecoilValue } from "recoil";
 
 interface IChartProps {
   coinId: string;
-  isDark: boolean;
 }
 
-function Chart({ coinId, isDark }: IChartProps) {
+function Chart({ coinId }: IChartProps) {
+  const isDark = useRecoilValue(isDarkAtom);
   return (
     <>
       <h1>Chart</h1>

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { fetchCoins } from "../api";
+import { isDarkAtom } from "../atoms";
+import { useSetRecoilState } from "recoil";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -63,11 +65,9 @@ type CoinObject = {
   type: string;
 };
 
-interface ICoinsProps {
-  toggleTheme: () => void;
-}
+interface ICoinsProps {}
 
-function Coins({ toggleTheme }: ICoinsProps) {
+function Coins() {
   //   const [coins, setCoins] = useState<CoinObject[]>([]);
   //   const [loading, setLoading] = useState(true);
 
@@ -81,12 +81,14 @@ function Coins({ toggleTheme }: ICoinsProps) {
   //   }, []);
 
   const { isLoading, data } = useQuery<CoinObject[]>("allCoins", fetchCoins);
+  const setDarkAtom = useSetRecoilState(isDarkAtom);
+  const toggleDarkAtom = () => setDarkAtom((prev) => !prev);
   return (
     <>
       <Container>
         <Header>
           <Title>Coins</Title>
-          <button onClick={toggleTheme}>Toggle</button>
+          <button onClick={toggleDarkAtom}>Toggle Mode</button>
         </Header>
         {isLoading ? (
           <Loader>Loading...</Loader>
