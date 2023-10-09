@@ -192,7 +192,9 @@ export default function Home() {
   const onOverlayClick = () => navigate("/");
   const clickedMovie =
     moviePathMatch?.params.id &&
-    data?.results.find((movie) => movie.id === +moviePathMatch.params.id);
+    data?.results.find(
+      (movie) => movie.id === Number(moviePathMatch.params.id)
+    );
   return (
     <Wrapper>
       {isLoading ? (
